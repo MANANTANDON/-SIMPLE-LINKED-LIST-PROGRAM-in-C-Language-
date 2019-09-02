@@ -34,24 +34,6 @@ void manan(){
 		}
 	   }
 
-	   for(i=0;i<n;i++){
-	     k = head;
-	    for(j=i+1;j<n;j++){
-	       z = head;
-	       if(k->info > z->info){
-		   b = k->info;
-		   k->info = z->info;
-		   z->info = b;
-	       }
-	    }
-	  }
-	  f = k;
-	  while(f!=NULL){
-
-	     printf("%d\n",f->info);
-	     f=f->link
-	  }
-
 	   p = head;
 	   printf("\n HEAD VALUE: %d",p);
 	   while(p!=NULL){
