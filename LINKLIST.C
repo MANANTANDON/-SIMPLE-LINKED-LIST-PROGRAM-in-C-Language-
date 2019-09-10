@@ -15,19 +15,19 @@ typedef struct node* node;
 
 
 /* first and the last node*/
-node head=NULL,last=NULL;
+node *head=NULL,*last=NULL;
 
 /* make a function to create a node so that we dont have to write the same code again and again*/
-node create(){
-	node temp=malloc(sizeof(node));
+node *create(){
+	node *temp=(node*)malloc(sizeof(node));
 	printf("Enter a value for the node");
 	scanf("%i",temp->info);
-	return i;
+	return temp;
 }
 
 /* insert at the beginning of the list */
 void insert_first(){
-	node temp=create();
+	node *temp=create();
 	
 	/* this means there is no node in the list yet. Make the temp node head and last and give next NULL*/
 	if(head==NULL){
@@ -42,7 +42,7 @@ void insert_first(){
 }
 /* insert at the ending of the list*/
 void insert_last(){
-	node temp=create();
+	node *temp=create();
 	/* case 1 if there is no node in the list*/
 	if(last==NULL){
 		last=temp;
@@ -60,7 +60,7 @@ void insert_last(){
 
 /* print the whole list*/
 print_list(){
-	node temp=head;
+	node *temp=head;
 	while(temp!=NULL){
 		printf("%i ",temp->info);
 		temp=temp->next;
