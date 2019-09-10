@@ -26,7 +26,7 @@ node *create(){
 }
 
 /* insert at the beginning of the list */
-void insert_first(){
+void insertAtFirst(){
 	node *temp=create();
 	
 	/* this means there is no node in the list yet. Make the temp node head and last and give next NULL*/
@@ -41,7 +41,7 @@ void insert_first(){
 	}
 }
 /* insert at the ending of the list*/
-void insert_last(){
+void insertAtLast(){
 	node *temp=create();
 	/* case 1 if there is no node in the list*/
 	if(last==NULL){
@@ -57,9 +57,28 @@ void insert_last(){
 		last=temp;
 	}
 }
+/* insert any where in the linked list*/
+void insertAtMiddle(){
+        node *avail=create();
+	  int m;
+	  printf("Enter the position you want to enter: ");
+	  scanf("%d",&m);
+	if(m==1){
+		avail->next = head;
+		head = avail;
+	}
+	else{
+		for(i=1;i<m-1;i++){
+			head=head->next;
+		}
+		avail->next = head->next;
+		head->next = avail;
+	}
+}
+		 
 
 /* print the whole list*/
-print_list(){
+void printList(){
 	node *temp=head;
 	while(temp!=NULL){
 		printf("%i ",temp->info);
@@ -75,14 +94,12 @@ int main(){
 	int n=0;
 	/* interacting with user using options*/
 	while(1){
-		printf("1. insert first\n");
-		printf("2. insert last\n");
-		printf("3. print list\n");
-		printf("4. exit\n");
+		printf("1. insert first\n2. insert last\n3. insert at middle\n4. print list\n5. exit\n");
 		scanf("%i",&n);
-		if(n==1)insert_first();
-		else if(n==2)insert_last();
-		else if(n==3)print_list();
+		if(n==1)insertAtFirst();
+		else if(n==2)insertAtLast();
+		else if(n==3)insertAtMiddle();
+		else if(n==4)printList();
 		else break;
 		
 	}
