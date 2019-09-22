@@ -6,13 +6,6 @@
   * 	if it has addresses of nodes previous and next to it then it is a doubly linked list
 */
 //the following program is about how to traverse, insert, delete and search an data in a LINKED LIST........
-
-
-#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-
-
 typedef struct nodeType{
 
       int data;
